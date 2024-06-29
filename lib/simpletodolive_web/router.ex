@@ -17,7 +17,7 @@ defmodule SimpletodoliveWeb.Router do
   scope "/", SimpletodoliveWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", TodoLive
   end
 
   # Other scopes may use custom stacks.
