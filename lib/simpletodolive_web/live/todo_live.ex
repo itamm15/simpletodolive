@@ -18,7 +18,7 @@ defmodule SimpletodoliveWeb.TodoLive do
   end
 
   def mount(_params, _session, socket) do
-    todos = []
+    todos = Simpletodolive.Repo.all(Simpletodolive.Todo)
     changeset = Simpletodolive.Todo.changeset(%Simpletodolive.Todo{}, %{})
 
     assigns = socket |> assign(:todos, todos) |> assign(:changeset, to_form(changeset))
